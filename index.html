@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Juego de Convenios Colectivos</title>
-    <!-- Enlace al archivo CSS para el diseño del juego -->
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Fuente externa -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenido al Juego de Convenios Colectivos</h1>
-        <p>Elige el convenio adecuado en función de la empresa y el puesto de trabajo.</p>
+    <div id="game-container">
+        <h1>Juego de Convenios Colectivos</h1>
         <button id="startButton">Comenzar</button>
 
-        <div id="game" style="display:none;">
-            <div id="question-container">
-                <h2 id="company-info"></h2>
-                <p id="job-info"></p>
-                <div id="choices"></div>
-            </div>
-            <button id="nextButton" style="display:none;">Siguiente</button>
+        <div id="game" style="display: none;">
+            <div id="company-info"></div>
+            <div id="job-info"></div>
+            <div id="choices"></div>
+            <div id="feedback"></div>
+            <button id="continueButton" style="display: none;">Continuar</button>
         </div>
 
-        <div id="result" style="display:none;">
-            <h2 id="final-result"></h2>
+        <div id="result" style="display: none;">
+            <div id="final-result"></div>
+            <div id="final-score"></div>
+            <button id="restartButton" style="display: none;">Reiniciar</button>
+        </div>
+
+        <div id="scoreContainer" style="display: none;">
+            <p>Puntuación: <span id="score">0</span></p>
+            <p>Tiempo: <span id="time">30</span> segundos</p>
         </div>
     </div>
 
-    <!-- Enlace al archivo JavaScript para la lógica del juego -->
     <script src="js/script.js"></script>
 </body>
 </html>
