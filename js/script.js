@@ -564,6 +564,8 @@ function endGame() {
     restartButton.style.display = 'block';
     finalResult.textContent = `¡Juego terminado! Has acertado ${correctAnswers} de ${cases.length} convenios.`;
     finalScore.textContent = `Tu puntuación final es: ${score} puntos.`;
+
+    saveScoreToLocalStorage(score); // Guardar la puntuación en localStorage
 }
 
 function restartGame() {
@@ -576,4 +578,19 @@ function shuffleArray(array) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
+}
+
+// Función para guardar la puntuación en localStorage
+function saveScoreToLocalStorage(score) {
+    let scores = JSON.parse(localStorage.getItem('scores')) || [];
+    scores.push(score);
+    localStorage.setItem('scores', JSON.stringify(scores));
+}
+
+// Función para mostrar las puntuaciones guardadas
+function showScores() {
+    let scores = JSON.parse(localStorage.getItem('scores')) || [];
+    scores.forEach((score, index) => {
+        console.log(`Juego ${index + 1}: ${score} puntos`);
+    });
 }
